@@ -1,0 +1,22 @@
+home:
+  other: Home
+prev_page:
+  other: "← Prev"
+next_page:
+  other: "Next →"
+read_time:
+  one: "1 min"
+  other: "{{ .Count }} min"
+words:
+  one: "1 word"
+  other: "{{ .Count }} words"
+toc:
+  other: "Table of Contents"
+translations:
+  other: "Translations"
+edit_post:
+  other: "Suggest Edit"
+code_copy:
+  other: "copy"
+code_copied:
+  other: "copied!"

@@ -1,0 +1,22 @@
+home:
+  other: 首页
+prev_page:
+  other: "← 上一篇"
+next_page:
+  other: "下一篇 →"
+read_time:
+  one: "1 分钟"
+  other: "{{ .Count }} 分钟"
+words:
+  one: "1 字"
+  other: "{{ .Count }} 字"
+toc:
+  other: "目录"
+translations:
+  other: "其他语言"
+edit_post:
+  other: "建议修改"
+code_copy:
+  other: "复制"
+code_copied:
+  other: "已复制！"

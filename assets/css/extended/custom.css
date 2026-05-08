@@ -1,0 +1,32 @@
+/* Chinese font stack */
+:lang(zh) body,
+:lang(zh) .post-content,
+:lang(zh) .post-title,
+:lang(zh) .post-description {
+  font-family:
+    "Noto Serif SC",
+    "Source Han Serif SC",
+    "思源宋体",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    serif;
+}
+
+/* Slightly more generous line height for CJK */
+:lang(zh) .post-content {
+  line-height: 1.9;
+}
+
+/* Research section — publication list styling */
+.research-entry {
+  margin-bottom: 1.5rem;
+}
+
+/* Fragments — muted, diary-like feel */
+.fragments .post-title {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Hide fragments from home feed without breaking the page */
