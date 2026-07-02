@@ -20,3 +20,17 @@ code_copy:
   other: "复制"
 code_copied:
   other: "已复制！"
+email:
+  other: "邮箱"
+aboutMe:
+  other: "关于我"
+education:
+  other: "教育背景"
+experience:
+  other: "经历"
+projects:
+  other: "项目"
+publications:
+  other: "论文发表"
+readMore:
+  other: "阅读更多 →"

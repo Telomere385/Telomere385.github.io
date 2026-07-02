@@ -1,0 +1,125 @@
+{{- define "main" }}
+<div class="profile-page">
+
+  <aside class="profile-sidebar">
+    <div class="profile-avatar">
+      <img src="{{ .Params.avatar | default "/img/avatar.svg" | absURL }}" alt="{{ .Params.name | default .Site.Title }}">
+    </div>
+
+    <h1 class="profile-name">{{ .Params.name | default .Site.Title }}</h1>
+
+    {{- with .Params.role }}
+    <p class="profile-role">{{ . }}</p>
+    {{- end }}
+
+    <ul class="profile-meta">
+      {{- with .Params.location }}
+      <li class="profile-meta-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span>{{ . }}</span>
+      </li>
+      {{- end }}
+
+      {{- with .Params.email }}
+      <li class="profile-meta-item">
+        <a href="mailto:{{ . }}">
+          {{ partial "svg.html" (dict "name" "email") }}
+          <span>{{ i18n "email" | default "Email" }}</span>
+        </a>
+      </li>
+      {{- end }}
+
+      {{- range .Params.social }}
+      <li class="profile-meta-item">
+        <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer me">
+          {{ partial "svg.html" (dict "name" .name) }}
+          <span>{{ .label | default (title .name) }}</span>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </aside>
+
+  <div class="profile-main">
+
+    <section class="profile-section">
+      <h2 class="profile-section-title">{{ i18n "aboutMe" | default "About Me" }}</h2>
+      <div class="md-content profile-about">
+        {{ .Content }}
+      </div>
+    </section>
+
+    {{- with .Params.education }}
+    <section class="profile-section">
+      <h2 class="profile-section-title">{{ i18n "education" | default "Education" }}</h2>
+      <div class="timeline">
+        {{- range . }}
+        <div class="timeline-item">
+          {{- with .logo }}
+          <div class="timeline-logo">
+            <img src="{{ . | absURL }}" alt="{{ $.Params.name }}">
+          </div>
+          {{- end }}
+          <div class="timeline-body">
+            <h3>{{ .institution }}</h3>
+            {{- with .degree }}<p class="timeline-degree">{{ . }}</p>{{- end }}
+            {{- with .period }}<p class="timeline-period">{{ . }}</p>{{- end }}
+            {{- with .details }}<p class="timeline-details">{{ . }}</p>{{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
+    {{- with .Params.experience }}
+    <section class="profile-section">
+      <h2 class="profile-section-title">{{ i18n "experience" | default "Experience" }}</h2>
+      <div class="timeline">
+        {{- range . }}
+        <div class="timeline-item">
+          <div class="timeline-body">
+            <h3>{{ .role }}</h3>
+            {{- with .org }}<p class="timeline-degree">{{ . }}</p>{{- end }}
+            {{- with .period }}<p class="timeline-period">{{ . }}</p>{{- end }}
+            {{- with .details }}<p class="timeline-details">{{ . }}</p>{{- end }}
+          </div>
+        </div>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
+    {{- with .Params.projects }}
+    <section class="profile-section">
+      <h2 class="profile-section-title">{{ i18n "projects" | default "Projects" }}</h2>
+      <div class="project-list">
+        {{- range . }}
+        <a class="project-card" href="{{ .url | relLangURL }}">
+          <h3>{{ .title }}</h3>
+          {{- with .summary }}<p>{{ . }}</p>{{- end }}
+          <span class="project-link-hint">{{ i18n "readMore" | default "Read more →" }}</span>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+
+    {{- with .Params.publications }}
+    <section class="profile-section">
+      <h2 class="profile-section-title">{{ i18n "publications" | default "Publications" }}</h2>
+      <ul class="publication-list">
+        {{- range . }}
+        <li>{{ . | safeHTML }}</li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+  </div>
+</div>
+{{- end }}

@@ -1,5 +1,5 @@
 baseURL: "https://telomere385.github.io/"
-title: "Telomere385"
+title: "Ruining Wang"
 theme: "PaperMod"
 pagination:
   pagerSize: 10
@@ -16,70 +16,46 @@ languages:
   en:
     languageName: "EN"
     weight: 1
-    title: "Telomere385"
+    title: "Ruining Wang"
     params:
       profileMode:
-        enabled: true
-        title: "Telomere385"
-        subtitle: "Researcher · Developer · Thinker"
-        imageUrl: "/img/avatar.png"
-        imageTitle: "avatar"
-        buttons:
-          - name: Research
-            url: /research/
-          - name: Blog
-            url: /posts/
+        enabled: false
     menu:
       main:
-        - name: About
-          url: /about/
-          weight: 1
         - name: Research
           url: /research/
-          weight: 2
+          weight: 1
         - name: Lab Notes
           url: /lab-notes/
-          weight: 3
+          weight: 2
         - name: Blog
           url: /posts/
-          weight: 4
+          weight: 3
 
   zh:
     languageName: "中文"
     weight: 2
-    title: "Telomere385"
+    title: "陆睿宁"
     params:
       profileMode:
-        enabled: true
-        title: "Telomere385"
-        subtitle: "研究者 · 开发者 · 思考者"
-        imageUrl: "/img/avatar.png"
-        imageTitle: "头像"
-        buttons:
-          - name: 研究
-            url: /zh/research/
-          - name: 博客
-            url: /zh/posts/
+        enabled: false
     menu:
       main:
-        - name: 关于
-          url: /zh/about/
-          weight: 1
         - name: 研究
           url: /zh/research/
-          weight: 2
+          weight: 1
         - name: 实验笔记
           url: /zh/lab-notes/
-          weight: 3
+          weight: 2
         - name: 技术博客
           url: /zh/posts/
-          weight: 4
+          weight: 3
 
 params:
   env: production
-  author: Telomere385
-  description: "Personal site of Telomere385 — research, notes, and writing."
-  keywords: [research, blog, notes, technology]
+  author: Ruining Wang
+  description: "Personal site of Ruining Wang — research, notes, and writing."
+  keywords: [research, robotics, reinforcement learning, blog]
 
   defaultTheme: auto
   disableThemeToggle: false
@@ -108,7 +84,7 @@ params:
     safari_pinned_tab: "/img/safari-pinned-tab.svg"
 
   label:
-    text: "Telomere385"
+    text: "Ruining Wang"
     icon: /img/favicon.ico
     iconHeight: 35
 
